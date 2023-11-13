@@ -1,0 +1,155 @@
+@charset "uft-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    color: blueviolet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+h1,
+h2 {
+    font-weight: 800;
+    color: darkmagenta;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+    display: block;
+    background: black;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+    animation: surgir 7s ease-out;
+    animation-timeline:  view();
+    animation-range: cover -5% cover 40%;
+}
+
+section.modulo p {
+    margin-bottom: 40px;
+    text-align: justify;
+    font-size: 1.4em;
+}
+
+section.modulo h2 {
+    margin-bottom: 40px;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+section.modulo.content {
+    padding: 40px 0;
+    background: yellow;
+}
+
+section.modulo.parallax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh !important;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section.modulo.parallax h1 {
+    color: black;
+    text-shadow: 5px 5px 5px aqua;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    z-index: 50;
+}
+
+section.modulo.parallax::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 50%, aqua 150%);
+}
+
+@keyframes surgir {
+    from {
+        opacity: 0;
+        translate: -100vw 0;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+
+section.modulo.parallax-1 {
+    background-image: url(https://anamariabraga.globo.com/wp-content/uploads/2020/07/artesanato-facil.jpg);
+}
+
+section.modulo.parallax-2 {
+    background-image: url(https://cdn.leroymerlin.com.br/products/composicao_de_parede_caratinga_1567739152_dd1d_600x600.jpg);
+}
+
+section.modulo.parallax-3 {
+    background-image: url(https://i.pinimg.com/736x/ef/61/64/ef6164b6425456697ca9f4e965312a40.jpg);
+}
+
+
+
+
+@media all and (max-width: 760px) {
+
+    section.modulo p {
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 1.5em;
+        padding-right: 10%;
+    }
+
+    section.modulo.parallax h1 {
+        color: black;
+        text-shadow: 5px 5px 5px aqua;
+        font-size: 2em;
+        text-transform: uppercase;
+        text-align: center;
+        z-index: 50;
+    }
+
+    section.modulo.content {
+        background: #fff;
+        padding: 10px;
+        padding-right: 15px;
+    }
+
+    section.modulo.parallax-1 {
+        background-image: url(https://cdn-icons-png.flaticon.com/512/3813/3813693.png);
+    }
+
+    .container{
+        animation: surgir 5s ease-out;
+        animation-timeline: view();
+        animation-range: cover -0% cover 40%;
+    }
+}
+
+
+footer {
+    bottom: 0;
+    color: darkmagenta;
+    left: 15%;
+}
